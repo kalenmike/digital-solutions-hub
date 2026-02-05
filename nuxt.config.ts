@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    buildAssetsDir: 'assets',
     head: {
       htmlAttrs: {
         lang: 'en'
@@ -41,6 +40,12 @@ export default defineNuxtConfig({
 
   modules: ["@nuxt/eslint", "@nuxt/ui", "@vueuse/nuxt","@nuxtjs/sitemap"],
   ssr: true,
+
+  runtimeConfig: {
+    public: {
+      formHash: ''
+    }
+  },
 
   site: {
     url: 'https://kalenmichael.com', // Replace with your actual domain
