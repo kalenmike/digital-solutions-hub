@@ -125,61 +125,86 @@ const technical = [
     description: "Linux, networking, security, and performance tuning",
   },
 ];
+
+// links="[
+//       {
+//         label: 'Get in Touch',
+//         to: '#contact',
+//         icon: 'i-lucide-send',
+//         size: 'xl',
+//       },
+//       {
+//         label: 'Learn More',
+//         to: '#about',
+//         size: 'xl',
+//         color: 'neutral',
+//         variant: 'subtle',
+//       },
+//     ]"
 </script>
 <template>
   <div>
-    <UPageHero :links="[
-      {
-        label: 'Get in Touch',
-        to: '#contact',
-        icon: 'i-lucide-send',
-        size: 'xl',
-      },
-      {
-        label: 'Learn More',
-        to: '#about',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle',
-      },
-    ]" :ui="{
-        wrapper:
-          'min-h-[calc(100vh-64px)] flex flex-col justify-center py-0 m-0',
-        container: 'py-0 sm:py-0 lg:py-0 flex flex-col justify-center',
-        base: 'py-0 sm:py-0 lg:py-0',
-      }">
+    <UPageHero :ui="{
+      wrapper:
+        'min-h-[calc(100vh-64px)] flex flex-col justify-center py-0 m-0',
+      container: 'py-0 sm:py-0 lg:py-0 flex flex-col justify-center',
+      base: 'py-0 sm:py-0 lg:py-0',
+    }">
       <template #top>
-        <!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-gray-950"> -->
-        <!--   <div -->
-        <!--     class="animate-grid absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"> -->
-        <!--   </div> -->
-        <!-- </div> -->
+        <div class="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-gray-950">
+          <div
+            class="animate-grid absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]">
+          </div>
+        </div>
       </template>
       <template #title>
-        <span class="tracking-wider">
+        <span class="tracking-wider" v-motion :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }">
           Digital Solutions <br /><span class="text-primary">Consultant</span>
         </span>
       </template>
 
       <template #description>
-        <p class="text-2xl tracking-wide">
+        <p class="text-2xl tracking-wide" v-motion :initial="{ opacity: 0, y: 20 }" :enter="{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 600, delay: 200 },
+        }">
           Helping businesses and individuals bring their digital ideas to life
           with consulting, product development, cloud infrastructure,
           programming, and technical support.
         </p>
       </template>
+
+      <template #links>
+        <span v-motion :initial="{ opacity: 0, scale: 0.9 }"
+          :enter="{ opacity: 1, scale: 1, transition: { delay: 400 } }">
+          <UButton label="Get in Touch" size="lg" color="primary" icon="i-lucide-send" to="#contact" />
+        </span>
+        <span v-motion :initial="{ opacity: 0, scale: 0.9 }"
+          :enter="{ opacity: 1, scale: 1, transition: { delay: 550 } }">
+          <UButton label="Learn More" size="lg" color="gray" variant="ghost" to="#about" />
+        </span>
+      </template>
     </UPageHero>
 
-    <UPageSection id="about" title="About me" class="md:px-16">
+    <UPageSection id="about" class="md:px-16">
+      <template #title>
+        <span v-motion :initial="{ opacity: 0, x: -20 }" :visible="{ opacity: 1, x: 0, transition: { duration: 600 } }">
+          About me
+        </span>
+      </template>
       <UContainer>
-        <p class="text-xl text-muted mb-6">
+        <p class="text-xl text-muted mb-6" v-motion :initial="{ opacity: 0, y: 20 }"
+          :visible="{ opacity: 1, y: 0, transition: { delay: 200 } }">
           With over a
           <span class="text-primary font-semibold">decade of experience</span>
           in the technology industry, I've had the privilege of working across
           diverse sectors; from startups racing to launch their MVPs to
           established enterprises modernizing their infrastructure.
         </p>
-        <p class="text-xl text-muted mb-6">
+        <p class="text-xl text-muted mb-6" v-motion :initial="{ opacity: 0, y: 20 }"
+          :visible="{ opacity: 1, y: 0, transition: { delay: 2 * 200 } }">
           After taking time away to focus on personal growth and family, I've
           returned with
           <span class="text-primary font-semibold">renewed passion</span> and a
@@ -187,7 +212,8 @@ const technical = [
           landscape. My break gave me clarity:
           <span class="text-primary font-semibold">technology should serve people</span>, not the other way around.
         </p>
-        <p class="text-xl text-muted">
+        <p class="text-xl text-muted" v-motion :initial="{ opacity: 0, y: 20 }"
+          :visible="{ opacity: 1, y: 0, transition: { delay: 3 * 200 } }">
           I
           <span class="text-primary font-semibold">bridge the gap</span> between
           technical complexity and business objectives. Whether you're a
@@ -198,21 +224,39 @@ const technical = [
         </p>
 
         <UContainer class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-          <UPageCard title="10+" description="Years Experience" :ui="{
-            wrapper: 'text-center items-center',
-            title: 'text-4xl font-bold',
-            description: 'text-gray-500 font-semibold tracking-wide',
-          }" />
-          <UPageCard title="50+" description="Projects Delivered" :ui="{
-            wrapper: 'text-center items-center',
-            title: 'text-4xl font-bold',
-            description: 'text-gray-500 font-semibold tracking-wide',
-          }" />
-          <UPageCard title="100%" description="Client Focused" :ui="{
-            wrapper: 'text-center items-center',
-            title: 'text-4xl font-bold',
-            description: 'text-gray-500 font-semibold tracking-wide',
-          }" />
+          <span v-motion :initial="{ opacity: 0, scale: 0.8 }" :visible="{
+            opacity: 1,
+            scale: 1,
+            transition: { delay: 600 + 1 * 350 },
+          }">
+            <UPageCard title="10+" description="Years Experience" :ui="{
+              wrapper: 'text-center items-center',
+              title: 'text-4xl font-bold',
+              description: 'text-gray-500 font-semibold tracking-wide',
+            }" />
+          </span>
+          <span v-motion :initial="{ opacity: 0, scale: 0.8 }" :visible="{
+            opacity: 1,
+            scale: 1,
+            transition: { delay: 600 + 2 * 350 },
+          }">
+            <UPageCard title="50+" description="Projects Delivered" :ui="{
+              wrapper: 'text-center items-center',
+              title: 'text-4xl font-bold',
+              description: 'text-gray-500 font-semibold tracking-wide',
+            }" />
+          </span>
+          <span v-motion :initial="{ opacity: 0, scale: 0.8 }" :visible="{
+            opacity: 1,
+            scale: 1,
+            transition: { delay: 600 + 3 * 350 },
+          }">
+            <UPageCard title="100%" description="Client Focused" :ui="{
+              wrapper: 'text-center items-center',
+              title: 'text-4xl font-bold',
+              description: 'text-gray-500 font-semibold tracking-wide',
+            }" />
+          </span>
         </UContainer>
 
         <UContainer class="mt-20 justify-center flex gap-5">

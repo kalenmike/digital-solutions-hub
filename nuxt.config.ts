@@ -1,13 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    buildAssetsDir: 'static',
+    buildAssetsDir: "static",
     head: {
       htmlAttrs: {
-        lang: 'en'
+        lang: "en",
       },
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
       link: [
         // 1. The Standard Fallback (Browser Tabs)
@@ -39,18 +39,24 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/eslint", "@nuxt/ui", "@vueuse/nuxt","@nuxtjs/sitemap"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/ui",
+    "@vueuse/nuxt",
+    "@nuxtjs/sitemap",
+    "@vueuse/motion/nuxt",
+  ],
   ssr: true,
 
   runtimeConfig: {
     public: {
-      formHash: ''
-    }
+      formHash: "",
+    },
   },
 
   site: {
-    url: 'https://kalenmichael.com', // Replace with your actual domain
-    name: 'Digital Solutions Hub'
+    url: "https://kalenmichael.com", // Replace with your actual domain
+    name: "Digital Solutions Hub",
   },
 
   devtools: {

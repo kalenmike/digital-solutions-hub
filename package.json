@@ -11,12 +11,13 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "pages": "pnpm generate && gh-pages -d .output/public"
+    "pages": "pnpm generate && gh-pages -d .output/public --dotfiles"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.87",
     "@iconify-json/simple-icons": "^1.2.68",
     "@nuxt/ui": "^4.4.0",
+    "@vueuse/motion": "^3.0.3",
     "@vueuse/nuxt": "14.2.0",
     "nuxt": "^4.3.0",
     "tailwindcss": "^4.1.18",
