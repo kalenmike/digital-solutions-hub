@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Geist', sans-serif;
+
+  --color-brandgreen-50: #f0faf8;
+  --color-brandgreen-100: #daefeb;
+  --color-brandgreen-200: #b9ded6;
+  --color-brandgreen-300: #8bc4ba;
+  --color-brandgreen-400: #55a598;
+  --color-brandgreen-500: #009777; /* Our Brand Color */
+  --color-brandgreen-600: #00856a;
+  --color-brandgreen-700: #046b57;
+  --color-brandgreen-800: #085547;
+  --color-brandgreen-900: #0a473c;
+  --color-brandgreen-950: #002823;
+
+  --color-green-50: #EFFDF5;
+  --color-green-100: #D9FBE8;
+  --color-green-200: #B3F5D1;
+  --color-green-300: #75EDAE;
+  --color-green-400: #00DC82;
+  --color-green-500: #00C16A;
+  --color-green-600: #00A155;
+  --color-green-700: #007F45;
+  --color-green-800: #016538;
+  --color-green-900: #0A5331;
+  --color-green-950: #052E16;
+}
+
+
+@keyframes grid-move {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 40px; /* This must match your bg-size */
+  }
+}
+
+.animate-grid {
+  animation: grid-move 4s linear infinite;
+}
+
+
+@keyframes noise-jitter {
+  0% { transform: translate(0,0) }
+  10% { transform: translate(-1%,-1%) }
+  20% { transform: translate(1%,1%) }
+  30% { transform: translate(-2%,1%) }
+  40% { transform: translate(2%,-1%) }
+  50% { transform: translate(-1%,2%) }
+  60% { transform: translate(1%,-2%) }
+  70% { transform: translate(2%,2%) }
+  80% { transform: translate(-2%,-2%) }
+  90% { transform: translate(1%,-1%) }
+  100% { transform: translate(0,0) }
+}
+
+.animate-noise {
+  animation: noise-jitter 0.1s infinite steps(1);
+}
