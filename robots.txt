@@ -1,0 +1,15 @@
+# Specific Blocks (AI & Scrapers)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# General Block (Standard Search Engines)
+User-agent: *
+Allow: /
+
+Sitemap: https://kalenmichael.com/sitemap.xml
