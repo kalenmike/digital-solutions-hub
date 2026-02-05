@@ -91,7 +91,7 @@ const showGrain = false;
 
 <template>
   <UApp>
-    <UNotifications />
+    <UToaster />
     <BackToTop />
 
     <div v-if="showGrain" class="fixed min-h-screen">
