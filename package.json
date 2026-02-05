@@ -11,7 +11,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "deploy": "pnpm generate && gh-pages -d .output/public -t true"
+    "pages": "pnpm generate && gh-pages -d .output/public -t true"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.87",
