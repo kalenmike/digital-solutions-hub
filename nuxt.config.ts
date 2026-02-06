@@ -45,6 +45,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/sitemap",
     "@vueuse/motion/nuxt",
+    "@nuxt/fonts"
   ],
   ssr: true,
 
@@ -52,6 +53,17 @@ export default defineNuxtConfig({
     public: {
       formHash: "",
     },
+  },
+
+  fonts: {
+    families: [
+      {name: 'Giest', provider: 'google'}
+    ],
+    defaults:{
+      fallbacks: {
+        'sans-serif': ['Arial']
+      }
+    }
   },
 
   site: {
@@ -88,6 +100,11 @@ export default defineNuxtConfig({
       crawlLinks: true,
     },
     minify: true,
+    esbuild: {
+      options:{
+        target: 'esnext'
+      }
+    }
   },
 
   compatibilityDate: "2025-01-15",
