@@ -20,13 +20,13 @@ const { email, isRevealed, reveal } = useSecureEmail(3000);
       <button
         v-else
         @click="reveal"
-        class="text-gray-400 hover:text-gray-600 italic text-sm"
+        class="hover:text-gray-600 italic text-sm"
       >
         Click to show email
       </button>
 
       <template #fallback>
-        <span class="text-gray-400">Protected</span>
+        <span class="">Protected</span>
       </template>
     </ClientOnly>
   </div>

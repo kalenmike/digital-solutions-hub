@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "digital-solutions-hub",
   "private": true,
   "type": "module",
   "licence": "PolyForm-Noncommercial-1.0.0",
@@ -11,7 +11,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "pages": "pnpm generate && gh-pages -d .output/public --dotfiles"
+    "pages": "pnpm generate && gh-pages -d .output/public --dotfiles",
+    "lighthouse": "CHROME_PATH=/usr/bin/brave-browser lighthouse http://localhost:8000 --view --screenEmulation.disabled --chrome-flags='--headless --no-sandbox'"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.87",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.13.0",
+    "@nuxt/image": "^2.0.0",
     "@nuxtjs/sitemap": "^7.6.0",
     "eslint": "^9.39.2",
     "gh-pages": "^6.3.0",
