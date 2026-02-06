@@ -90,6 +90,7 @@ createTool("Contrast Ratio", "Verify that your chosen colours are readable to yo
 createTool("Tiny JPG", "Minimize your images to improve your page loading time.", "i-lucide-scaling", "https://tinyjpg.com/"),
 createTool("Form Submit", "Form submissions without a backend.", "i-lucide-send-horizontal", "https://formsubmit.co/"),
 createTool("PageSpeed Insights", "Test your web page performance.", "i-lucide-search-code", "https://pagespeed.web.dev/"),
+createTool("Google Index Checker", "", "", "https://indexly.ai/google-index-checker"),
 ];
 </script>
 <template>
