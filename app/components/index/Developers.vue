@@ -24,17 +24,14 @@ const technical = [
 ];
 </script>
 <template>
-  <UPageSection
-    id="developers"
-    :features="technical"
-  >
+  <UPageSection id="developers" :features="technical">
     <template #title>
       <span
         v-motion
         :initial="{ opacity: 0, x: -20 }"
         :visible-once="{ opacity: 1, x: 0, transition: { duration: 600 } }"
       >
-For Technical Teams
+        For Technical Teams
       </span>
     </template>
     <template #description>
@@ -43,10 +40,39 @@ For Technical Teams
         :initial="{ opacity: 0, x: -20 }"
         :visible-once="{ opacity: 1, x: 0, transition: { duration: 600 } }"
       >
-      <p>Need an experienced developer to augment your team or lead a project? I bring deep technical expertise and a pragmatic approach to solving complex challenges.</p>
-      <br>
-      <p>Whether you need architecture review, hands-on development, or technical leadership, I integrate seamlessly with your existing workflows and deliver production-ready results.</p>
+        <p>
+          Need an experienced developer to augment your team or lead a project?
+          I bring deep technical expertise and a pragmatic approach to solving
+          complex challenges.
+        </p>
+        <br />
+        <p>
+          Whether you need architecture review, hands-on development, or
+          technical leadership, I integrate seamlessly with your existing
+          workflows and deliver production-ready results.
+        </p>
       </span>
+    </template>
+    <template #features>
+      <div
+        v-for="(item, index) in technical"
+        :key="item.title"
+        v-motion
+        :initial="{ opacity: 0, y: 40 }"
+        :visible-once="{
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: index * 150,
+            type: 'spring',
+            stiffness: 50,
+          },
+        }"
+        :hovered="{ y: -8, transition: { type: 'spring', stiffness: 300 } }"
+        class="cursor-default"
+      >
+        <UPageFeature v-bind="item" />
+      </div>
     </template>
   </UPageSection>
 </template>

@@ -129,28 +129,34 @@
       </UContainer>
 
       <UContainer class="mt-20 justify-center flex gap-5">
+
+        <span class="transition-transform duration-300 hover:-translate-y-2">
         <UButton
           to="https://github.com/kalenmike"
           target="_blank"
           aria-label="GitHub"
           color="neutral"
-          variant="ghost"
+          variant="link"
         >
           <template #leading>
             <UIcon name="i-simple-icons-github" class="w-8 h-8" />
           </template>
         </UButton>
+
+        </span>
+        <span class="transition-transform duration-300 hover:-translate-y-2">
         <UButton
           to="https://www.linkedin.com/in/kalenmichael/"
           target="_blank"
           aria-label="LinkedIn"
           color="neutral"
-          variant="ghost"
+          variant="link"
         >
           <template #leading>
             <UIcon name="i-simple-icons-linkedin" class="w-8 h-8" />
           </template>
         </UButton>
+        </span>
       </UContainer>
     </UContainer>
   </UPageSection>

@@ -1,11 +1,11 @@
 <template>
   <div>
     <IndexLanding/>
-    <IndexAbout/>
-    <IndexServices />
-    <IndexCTA />
-    <IndexIndividuals />
-    <IndexDevelopers />
-    <IndexContact />
+    <LazyIndexAbout/>
+    <LazyIndexServices />
+    <LazyIndexCTA />
+    <LazyIndexIndividuals />
+    <LazyIndexDevelopers />
+    <LazyIndexContact />
   </div>
 </template>
