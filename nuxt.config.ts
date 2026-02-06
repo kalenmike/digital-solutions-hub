@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  features: {
+    inlineStyles: true
+  },
+
   app: {
     buildAssetsDir: "static",
     head: {
@@ -60,6 +64,7 @@ export default defineNuxtConfig({
       {name: 'Giest', provider: 'google'}
     ],
     defaults:{
+      formats: ['woff2'],
       fallbacks: {
         'sans-serif': ['Arial']
       }
@@ -104,7 +109,7 @@ export default defineNuxtConfig({
       options:{
         target: 'esnext'
       }
-    }
+    },
   },
 
   compatibilityDate: "2025-01-15",

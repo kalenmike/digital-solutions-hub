@@ -1,10 +1,12 @@
 <template>
-  <UPageHero :ui="{
-      wrapper:
-        'min-h-[calc(100vh-64px)] flex flex-col justify-center py-0 m-0',
-      container: 'py-0 sm:py-0 lg:py-0 flex flex-col justify-center',
-      base: 'py-0 sm:py-0 lg:py-0',
-    }">
+  <UPageHero
+    orientation="vertical"
+    reverse
+    :ui="{
+    container: ''
+  }"
+    class="min-h-[100vh]"
+    >
       <template #top>
         <div class="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-gray-950">
           <div
@@ -30,6 +32,21 @@
           programming, and technical support.
         </p>
       </template>
+
+
+      <div class="relative flex justify-center" v-motion :initial="{ opacity: 0, scale: 0.9 }" :enter="{ opacity: 1, scale: 1, transition: { delay: 400 } }">
+    <div class="relative group">
+      <div class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+
+      <img
+        src="/images/kalen-michael.png"
+        alt="Kalen Michael"
+        width="400"
+        height="400"
+        class="relative rounded-full shadow-2xl ring-1 ring-gray-200 dark:ring-gray-800 object-cover w-64 h-64 lg:w-96 lg:h-96"
+      />
+    </div>
+  </div>
 
       <template #links>
         <span v-motion :initial="{ opacity: 0, scale: 0.9 }"

@@ -107,11 +107,6 @@ createTool("Google Index Checker", "", "", "https://indexly.ai/google-index-chec
       },
     ]"
   >
-    <template #top>
-      <div
-        class="absolute -top-[30%] -left-[10%] w-[500px] h-[500px] bg-primary-500/10 blur-[120px] rounded-full -z-10"
-      />
-    </template>
 
     <template #headline>
       <span
