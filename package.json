@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.13.0",
-    "@nuxt/image": "^2.0.0",
     "@nuxtjs/sitemap": "^7.6.0",
     "eslint": "^9.39.2",
     "gh-pages": "^6.3.0",

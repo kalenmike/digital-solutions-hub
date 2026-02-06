@@ -45,7 +45,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/sitemap",
     "@vueuse/motion/nuxt",
-    "@nuxt/image",
   ],
   ssr: true,
 
@@ -65,10 +64,6 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/css/main.css"],
-
-  image: {
-    format: ['webp']
-  },
 
   postcss: {
     plugins: {

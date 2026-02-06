@@ -1,8 +1,6 @@
 <template>
   <div>
-    <NuxtImg src="/images/logo-white.png" format="webp" loading="lazy" alt="Kalen Michael Logo"
-      class="hidden dark:block w-auto h-8 shrink-0" />
-    <NuxtImg src="/images/logo-grey.png" format="webp" loading="lazy" alt="Kalen Michael Logo"
-      class="block dark:hidden w-auto h-8 shrink-0" />
+    <img src="/images/km-logo-white.svg" class="hidden dark:block w-auto h-8 shrink-0" alt="Logo" />
+    <img src="/images/km-logo-grey.svg" class="block dark:hidden w-auto h-8 shrink-0" alt="Logo" />
   </div>
 </template>
