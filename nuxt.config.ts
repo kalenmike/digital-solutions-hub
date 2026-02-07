@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   features: {
-    inlineStyles: true
+    inlineStyles: true,
   },
 
   app: {
@@ -40,6 +40,13 @@ export default defineNuxtConfig({
           href: "/android-chrome-512x512.png",
         },
       ],
+      script: [
+        // Calendly
+        {
+          src: "https://assets.calendly.com/assets/external/widget.js",
+          async: true,
+        },
+      ],
     },
   },
 
@@ -49,7 +56,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/sitemap",
     "@vueuse/motion/nuxt",
-    "@nuxt/fonts"
+    "@nuxt/fonts",
   ],
   ssr: true,
 
@@ -60,15 +67,13 @@ export default defineNuxtConfig({
   },
 
   fonts: {
-    families: [
-      {name: 'Giest', provider: 'google'}
-    ],
-    defaults:{
-      formats: ['woff2'],
+    families: [{ name: "Giest", provider: "google" }],
+    defaults: {
+      formats: ["woff2"],
       fallbacks: {
-        'sans-serif': ['Arial']
-      }
-    }
+        "sans-serif": ["Arial"],
+      },
+    },
   },
 
   site: {
@@ -106,9 +111,9 @@ export default defineNuxtConfig({
     },
     minify: true,
     esbuild: {
-      options:{
-        target: 'esnext'
-      }
+      options: {
+        target: "esnext",
+      },
     },
   },
 
