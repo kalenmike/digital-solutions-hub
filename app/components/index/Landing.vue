@@ -1,3 +1,17 @@
+<script setup lang="ts">
+const bookMe = () => {
+  // Check if the script has loaded to prevent errors
+  if ((window as any).Calendly) {
+    (window as any).Calendly.initPopupWidget({
+      url: 'https://calendly.com/meet-kalen-michael/intro-call'
+    });
+  } else {
+    console.error("Calendly script hasn't loaded yet.");
+  }
+};
+
+const isOpen = ref(false)
+</script>
 <template>
   <UPageHero
     orientation="vertical"
@@ -27,9 +41,7 @@
           y: 0,
           transition: { duration: 600, delay: 200 },
         }">
-          Helping businesses and individuals bring their digital ideas to life
-          with consulting, product development, cloud infrastructure,
-          programming, and technical support.
+Helping non-technical founders launch software without headaches.
         </p>
       </template>
 
@@ -51,13 +63,16 @@
       <template #links>
         <span v-motion :initial="{ opacity: 0, scale: 0.9 }"
           :enter="{ opacity: 1, scale: 1, transition: { delay: 400 } }">
-          <UButton label="Get in Touch" size="lg" color="primary" icon="i-lucide-send" to="#contact" />
+          <UButton label="Book a Strategy Call" size="lg" color="primary" calls="cursor-pointer" @click="isOpen = true" />
+          <p class="mt-2 text-sm text-gray-500">* Free 15-min, no-pressure intro call</p>
         </span>
         <span v-motion :initial="{ opacity: 0, scale: 0.9 }"
           :enter="{ opacity: 1, scale: 1, transition: { delay: 550 } }">
-          <UButton label="Learn More" size="lg" color="gray" variant="ghost" to="#about" />
+          <UButton label="How It Works" size="lg" color="gray" variant="ghost" to="#about" />
         </span>
       </template>
     </UPageHero>
+
+      <Calendly v-model:open="isOpen"/>
 
   </template
