@@ -20,7 +20,7 @@ const bannerActions = [
 <template>
   <UBanner title="Something went wrong." icon="i-lucide-circle-x" :actions="bannerActions" />
   <div class="error-container">
-    <UPageHero :title="error.statusCode" :ui="{
+    <UPageHero :title="error.statusCode.toString()" :ui="{
       wrapper:
         'min-h-[calc(100vh-64px)] flex flex-col justify-center py-0 m-0',
       container: 'py-0 sm:py-0 lg:py-0 flex flex-col justify-center',
