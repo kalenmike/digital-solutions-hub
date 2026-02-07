@@ -63,7 +63,7 @@ Helping non-technical founders launch software without headaches.
       <template #links>
         <span v-motion :initial="{ opacity: 0, scale: 0.9 }"
           :enter="{ opacity: 1, scale: 1, transition: { delay: 400 } }">
-          <UButton label="Book a Strategy Call" size="lg" color="primary" calls="cursor-pointer" @click="isOpen = true" />
+          <UButton label="Book a Strategy Call" size="lg" color="primary" class="cursor-pointer" @click="isOpen = true" />
           <p class="mt-2 text-sm text-gray-500">* Free 15-min, no-pressure intro call</p>
         </span>
         <span v-motion :initial="{ opacity: 0, scale: 0.9 }"
