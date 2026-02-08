@@ -63,12 +63,12 @@ Helping non-technical founders launch software without headaches.
       <template #links>
         <span v-motion :initial="{ opacity: 0, scale: 0.9 }"
           :enter="{ opacity: 1, scale: 1, transition: { delay: 400 } }">
-          <UButton label="Book a Strategy Call" size="lg" color="primary" class="cursor-pointer" @click="isOpen = true" />
-          <p class="mt-2 text-sm text-gray-500">* Free 15-min, no-pressure call</p>
+          <UButton label="Book a Strategy Call" trailing-icon="i-lucide-rocket" size="lg" color="primary" class="cursor-pointer" @click="isOpen = true" />
+          <p class="mt-2 text-sm text-gray-500">Free 15 minute call - no commitment</p>
         </span>
         <span v-motion :initial="{ opacity: 0, scale: 0.9 }"
           :enter="{ opacity: 1, scale: 1, transition: { delay: 550 } }">
-          <UButton label="How It Works" size="lg" color="gray" variant="ghost" to="#about" />
+          <UButton label="How It Works" size="lg" color="gray" variant="ghost" to="#process" />
         </span>
       </template>
     </UPageHero>
