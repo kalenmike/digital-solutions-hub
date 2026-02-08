@@ -98,19 +98,6 @@ const isOpen = ref(false);
     id="process"
     ref="sectionRef"
     >
-    <div class="pointer-events-none absolute inset-0 opacity-30">
-      <div
-        class="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full blur-3xl"
-        style="
-          background: radial-gradient(
-            circle,
-            hsl(var(--primary) / 0.08) 0%,
-            transparent 70%
-          );
-        "
-      />
-    </div>
-
     <div class="container relative mx-auto max-w-6xl px-4">
       <div
         v-motion
