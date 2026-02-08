@@ -19,7 +19,7 @@ const isOpen = ref(false)
     :ui="{
     container: ''
   }"
-    class="min-h-[100vh]"
+    class="min-h-[calc(100dvh-64px)]"
     >
       <template #top>
         <div class="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-gray-950">

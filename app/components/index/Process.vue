@@ -63,7 +63,6 @@ const lineStyle = computed(() => {
 })
 
 const verticalLineStyle = computed(() => {
-  console.log(scrollPercent.value);
   return {
     transform: `scaleY(${scrollPercent.value})`,
     transformOrigin: 'top', // Ensures it grows from the left
