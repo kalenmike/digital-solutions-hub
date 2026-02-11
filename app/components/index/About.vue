@@ -1,5 +1,8 @@
 <template>
-  <UPageSection id="about" class="md:px-16">
+  <UPageSection
+    id="about"
+    class="md:px-16 bg-[var(--ui-bg)] shadow-[0_0_10px_0_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_0_rgba(250,250,250,0.05)]"
+  >
     <template #title>
       <span
         v-motion
@@ -14,7 +17,11 @@
         class="text-lg text-muted mb-6"
         v-motion
         :initial="{ opacity: 0, y: 20 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { delay: 200, mass: 0.8 } }"
+        :visible-once="{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 200, mass: 0.8 },
+        }"
       >
         With over a
         <span class="text-primary font-semibold">decade of experience</span>
@@ -26,7 +33,11 @@
         class="text-lg text-muted mb-6"
         v-motion
         :initial="{ opacity: 0, y: 20 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { delay: 2 * 200 ,mass:0.8 } }"
+        :visible-once="{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 2 * 200, mass: 0.8 },
+        }"
       >
         After taking time away to focus on personal growth and family, I've
         returned with
@@ -41,7 +52,11 @@
         class="text-lg text-muted"
         v-motion
         :initial="{ opacity: 0, y: 20 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { delay: 3 * 200, mass: 0.8 } }"
+        :visible-once="{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 3 * 200, mass: 0.8 },
+        }"
       >
         I
         <span class="text-primary font-semibold">bridge the gap</span> between
@@ -86,7 +101,7 @@
             transition: {
               delay: 400 + 2 * 300,
               type: 'spring',
-              stiffness:100,
+              stiffness: 100,
               damping: 15,
               mass: 0.8,
             },
@@ -129,33 +144,31 @@
       </UContainer>
 
       <UContainer class="mt-20 justify-center flex gap-5">
-
         <span class="transition-transform duration-300 hover:-translate-y-2">
-        <UButton
-          to="https://github.com/kalenmike"
-          target="_blank"
-          aria-label="GitHub"
-          color="neutral"
-          variant="link"
-        >
-          <template #leading>
-            <UIcon name="i-simple-icons-github" class="w-8 h-8" />
-          </template>
-        </UButton>
-
+          <UButton
+            to="https://github.com/kalenmike"
+            target="_blank"
+            aria-label="GitHub"
+            color="neutral"
+            variant="link"
+          >
+            <template #leading>
+              <UIcon name="i-simple-icons-github" class="w-8 h-8" />
+            </template>
+          </UButton>
         </span>
         <span class="transition-transform duration-300 hover:-translate-y-2">
-        <UButton
-          to="https://www.linkedin.com/in/kalenmichael/"
-          target="_blank"
-          aria-label="LinkedIn"
-          color="neutral"
-          variant="link"
-        >
-          <template #leading>
-            <UIcon name="i-simple-icons-linkedin" class="w-8 h-8" />
-          </template>
-        </UButton>
+          <UButton
+            to="https://www.linkedin.com/in/kalenmichael/"
+            target="_blank"
+            aria-label="LinkedIn"
+            color="neutral"
+            variant="link"
+          >
+            <template #leading>
+              <UIcon name="i-simple-icons-linkedin" class="w-8 h-8" />
+            </template>
+          </UButton>
         </span>
       </UContainer>
     </UContainer>
