@@ -51,7 +51,7 @@ watch(isOpen, async (newVal) => {
   <UModal
     v-model:open="isOpen"
     title="Book a Free Strategy Call"
-    class="w-full sm:max-w-[1050px]"
+    class="w-full lg:max-w-[1049px]"
   >
     <template #body>
       <div
