@@ -38,6 +38,6 @@
       alt="Wolves Tours"
       height="16"
     />
-    <img src="/images/logos/fluence.png" alt="Fluence" class="h-6" />
+    <ThemedImage src="/images/logos/fluence.png" alt="Fluence" height="6" />
   </UMarquee>
 </template>
