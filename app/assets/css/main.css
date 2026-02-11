@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+@layer utilities {
+  .show-light {
+    @apply block dark:hidden;
+  }
+
+  .show-dark {
+    @apply hidden dark:block;
+  }
+}
+
 @theme static {
   --font-sans: 'Geist', sans-serif;
 

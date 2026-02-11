@@ -1,9 +1,10 @@
 <template>
   <div>
-    <IndexLanding/>
-    <LazyIndexProcess/>
-    <LazyIndexAbout/>
+    <IndexLanding />
+    <LazyIndexProcess />
+    <LazyIndexAbout />
     <LazyIndexServices />
+    <LazyIndexClients />
     <LazyIndexCTA />
     <LazyIndexIndividuals />
     <LazyIndexDevelopers />
