@@ -47,7 +47,7 @@ useHead({
 const title = "Digital Solutions Hub | Kalen Michael";
 const description =
   "Helping businesses and individuals bring their digital ideas to life";
-const siteUrl = "http://localhost:3000"; //"https://kalenmichael.com";
+const siteUrl = "https://kalenmichael.com";
 
 useSeoMeta({
   title,
