@@ -5,9 +5,25 @@ const { data: post } = await useAsyncData(() =>
   queryCollection("blog").path(route.path).first(),
 );
 
+const siteUrl = "https://kalenmichael.com";
+const title = post.value?.title + " | Digital Solutions Hub";
+const description = post.value?.description;
+const imageUrl = siteUrl + post.value?.coverImage;
+
 useSeoMeta({
-  title: post.value?.title,
-  description: post.value?.description,
+  title: title,
+  description: description,
+
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: imageUrl,
+  ogUrl: siteUrl + route.path,
+  ogType: "article",
+
+  twitterImage: imageUrl,
+  twitterCard: "summary_large_image",
+  twitterTitle: title,
+  twitterDescription: description,
 });
 
 const slugify = (str: string) => str.toLowerCase().replaceAll(" ", "-");

@@ -47,16 +47,22 @@ useHead({
 const title = "Digital Solutions Hub | Kalen Michael";
 const description =
   "Helping businesses and individuals bring their digital ideas to life";
-const siteUrl = "https://kalenmichael.com";
+const siteUrl = "http://localhost:3000"; //"https://kalenmichael.com";
 
 useSeoMeta({
   title,
   description,
+
   ogTitle: title,
   ogDescription: description,
-  ogImage: `${siteUrl}/favicon-500.png`,
-  twitterImage: `${siteUrl}/favicon-500.png`,
+  ogImage: `${siteUrl}/images/og-launch-software-no-headaches.png`,
+  ogUrl: siteUrl + route.path,
+  ogType: "website",
+
+  twitterImage: `${siteUrl}/images/og-launch-software-no-headaches.png`,
   twitterCard: "summary_large_image",
+  twitterTitle: title,
+  twitterDescription: description,
 });
 
 onMounted(() => {
