@@ -57,6 +57,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "@vueuse/motion/nuxt",
     "@nuxt/fonts",
+    "@nuxt/content",
   ],
   ssr: true,
 

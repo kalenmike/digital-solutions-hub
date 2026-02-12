@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+@plugin "@tailwindcss/typography";
+
 @layer utilities {
   .show-light {
     @apply block dark:hidden;
@@ -74,4 +76,13 @@
 
 [v-motion] {
   opacity: 0;
+}
+
+.prose a {
+  text-decoration: none !important;
+}
+
+/* Fix headings margin in markdown callouts */
+h3:first-child {
+  margin-top: 0 !important;
 }
