@@ -7,9 +7,9 @@ const base = "https://kalenmichael.com";
 // This computed property updates whenever the route changes
 const canonicalUrl = computed(() => {
   // For the home page, use base URL without trailing slash
-  if (route.path === "/") {
-    return `${base}`;
-  }
+  // if (route.path === "/") {
+  //   return `${base}`;
+  // }
   // For all other routes, ensure a trailing slash
   return `${base}${route.path.endsWith("/") ? route.path : `${route.path}/`}`;
 });

@@ -89,6 +89,7 @@ export default defineNuxtConfig({
   site: {
     url: "https://kalenmichael.com", // Replace with your actual domain
     name: "Digital Solutions Hub",
+    trailingSlash: true,
   },
 
   sitemap: {
