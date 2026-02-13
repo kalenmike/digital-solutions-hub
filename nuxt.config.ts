@@ -4,6 +4,14 @@ export default defineNuxtConfig({
     inlineStyles: true,
   },
 
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        trailingSlash: "append", //  Fix for GitHub Pages 301's
+      },
+    },
+  },
+
   app: {
     buildAssetsDir: "static",
     head: {
@@ -64,6 +72,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       formHash: "",
+      siteUrl: "",
     },
   },
 
@@ -80,6 +89,10 @@ export default defineNuxtConfig({
   site: {
     url: "https://kalenmichael.com", // Replace with your actual domain
     name: "Digital Solutions Hub",
+  },
+
+  sitemap: {
+    zeroRuntime: true,
   },
 
   devtools: {
