@@ -1,12 +1,13 @@
 ---
 title: "Is Your Website Hurting Your SEO?"
 description: "Modern websites often rely on JavaScript to load content. Learn how this can delay indexing and what to do to protect your search rankings."
-slug: "dynamic-website-seo-issues"
+slug: "dynamic-website-seo-challenges"
 date: "2026-02-11"
 tags: ["SEO", "Web Development", "Digital Strategy", "Dynamic Website", "Search Engine Indexing", "Performance Optimization"]
 author: "Kalen Michael"
 readingTime: "8 minutes"
 coverImage: "/images/blog/dynamic-websites-seo-challenges/cover.jpg"
+ogImage: "/images/blog/dynamic-websites-seo-challenges/og.png"
 ---
 ::callout
 ### Quick TL;DR - Key Takeaways

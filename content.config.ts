@@ -12,6 +12,7 @@ export default defineContentConfig({
         author: z.string(),
         readingTime: z.string(),
         coverImage: z.string(),
+        ogImage: z.string(),
       }),
     }),
   },
