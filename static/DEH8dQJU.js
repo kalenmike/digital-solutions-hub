@@ -1,0 +1,1 @@
+import{S as n,c as p,O as r,N as c,H as u,o as i,V as s}from"./zZAbJV2_.js";const m={base:"my-5 leading-7 text-pretty"},_={__name:"ProseP",props:{class:{type:null,required:!1}},setup(e){const a=e,t=n(),o=u(()=>s({extend:s(m),...t.ui?.prose?.p||{}}));return(l,d)=>(i(),p("p",{class:c(o.value({class:a.class}))},[r(l.$slots,"default")],2))}};export{_ as default};
