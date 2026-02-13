@@ -1,14 +1,15 @@
 <script setup lang="ts">
 const route = useRoute();
+const config = useRuntimeConfig();
 
 const { data: post } = await useAsyncData(() =>
   queryCollection("blog").path(route.path).first(),
 );
 
-const siteUrl = "https://kalenmichael.com";
+const siteUrl = config.public.siteUrl;
 const title = post.value?.title + " | Digital Solutions Hub";
 const description = post.value?.description;
-const imageUrl = siteUrl + post.value?.coverImage;
+const imageUrl = siteUrl + post.value?.ogImage;
 
 useSeoMeta({
   title: title,
