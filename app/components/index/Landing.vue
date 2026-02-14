@@ -25,36 +25,20 @@ const isOpen = ref(false);
       <BackgroundGrid />
     </template>
     <template #title>
-      <span
-        class="tracking-wider"
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-      >
+      <div v-scroll-animate class="fade-slide-up tracking-wider">
         Digital Solutions <br /><span class="text-primary">Consultant</span>
-      </span>
+      </div>
     </template>
 
     <template #description>
-      <p
-        class="text-2xl tracking-wide"
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :enter="{
-          opacity: 1,
-          y: 0,
-          transition: { duration: 600, delay: 200 },
-        }"
-      >
+      <p v-scroll-animate:100ms class="text-2xl tracking-wide fade-slide-up">
         Helping non-technical founders launch software without headaches.
       </p>
     </template>
 
     <div
-      class="relative flex justify-center"
-      v-motion
-      :initial="{ opacity: 0, scale: 0.9 }"
-      :enter="{ opacity: 1, scale: 1, transition: { delay: 400 } }"
+      v-scroll-animate:50ms
+      class="relative flex justify-center fade-in-scale"
     >
       <div class="relative group">
         <div
@@ -72,11 +56,7 @@ const isOpen = ref(false);
     </div>
 
     <template #links>
-      <span
-        v-motion
-        :initial="{ opacity: 0, scale: 0.9 }"
-        :enter="{ opacity: 1, scale: 1, transition: { delay: 400 } }"
-      >
+      <span v-scroll-animate:400ms class="fade-in-scale">
         <UButton
           label="Book a Strategy Call"
           trailing-icon="i-lucide-rocket"
@@ -89,15 +69,11 @@ const isOpen = ref(false);
           Free 15 minute call - no commitment
         </p>
       </span>
-      <span
-        v-motion
-        :initial="{ opacity: 0, scale: 0.9 }"
-        :enter="{ opacity: 1, scale: 1, transition: { delay: 550 } }"
-      >
+      <span v-scroll-animate:550ms class="fade-in-scale">
         <UButton
           label="How It Works"
           size="lg"
-          color="gray"
+          color="neutral"
           variant="ghost"
           to="#process"
         />

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useScroll } from '@vueuse/core';
+import { useScroll } from "@vueuse/core";
 
 const steps = [
   {
@@ -21,14 +21,14 @@ const steps = [
     title: "Build & Implement",
     description: "I handle the tech, you stay informed",
     icon: "i-lucide-hammer",
-    animation: "swing"
+    animation: "swing",
   },
   {
     number: 4,
     title: "Launch Confidently",
     description: "A solid product, ready to grow",
     icon: "i-lucide-rocket",
-    animation: "launch"
+    animation: "launch",
   },
 ];
 
@@ -36,42 +36,40 @@ const steps = [
 // const sectionRef = ref<HTMLElement | null>(null);
 // const { y } = useWindowScroll()
 
-const sectionRef = ref(null)
+const sectionRef = ref(null);
 // We track the window scroll, but calculate based on the section
-const { y } = useScroll(window)
-const { top, height } = useElementBounding(sectionRef)
+const { y } = useScroll(window);
+const { top, height } = useElementBounding(sectionRef);
 
 const scrollPercent = computed(() => {
-  if (!sectionRef.value) return 0
+  if (!sectionRef.value) return 0;
 
   // Calculation: How far has the section moved past the top of the screen?
   // We divide the distance scrolled by the total height (minus viewport)
-  const windowHeight = window.innerHeight
-  const progress = -top.value / (height.value - windowHeight)
+  const windowHeight = window.innerHeight;
+  const progress = -top.value / (height.value - windowHeight);
 
   // Clamp between 0 and 1
-  return Math.max(0, Math.min(1, progress))
-})
-
+  return Math.max(0, Math.min(1, progress));
+});
 
 const lineStyle = computed(() => {
   return {
     transform: `scaleX(${1 - scrollPercent.value})`,
-    transformOrigin: 'left', // Ensures it grows from the left
-    willChange: 'transform'  // Hints to the browser for smoother animation
-  }
-})
+    transformOrigin: "left", // Ensures it grows from the left
+    willChange: "transform", // Hints to the browser for smoother animation
+  };
+});
 
 const verticalLineStyle = computed(() => {
   return {
     transform: `scaleY(${scrollPercent.value})`,
-    transformOrigin: 'top', // Ensures it grows from the left
-    willChange: 'transform'  // Hints to the browser for smoother animation
-  }
-})
+    transformOrigin: "top", // Ensures it grows from the left
+    willChange: "transform", // Hints to the browser for smoother animation
+  };
+});
 
 const isOpen = ref(false);
-
 </script>
 <template>
   <!-- <UPageSection -->
@@ -93,17 +91,9 @@ const isOpen = ref(false);
   <!--     stress of managing developers. -->
   <!--   </template> -->
   <!-- </UPageSection> -->
-  <UPageSection
-    id="process"
-    ref="sectionRef"
-    >
+  <UPageSection id="process" ref="sectionRef">
     <div class="container relative mx-auto max-w-6xl px-4">
-      <div
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-        class="mb-16 text-center md:mb-20"
-      >
+      <div v-scroll-animate class="mb-16 text-center md:mb-20 fade-slide-up">
         <UBadge variant="subtle" color="primary" class="mb-4">Process</UBadge>
         <h3
           class="mt-6 font-display text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl md:text-5xl"
@@ -134,7 +124,7 @@ const isOpen = ref(false);
           <div class="h-full w-[3px] bg-gray-200 dark:bg-gray-800" />
           <div
             class="absolute top-0 h-full w-[3px] bg-primary-500 transition-transform duration-700 ease-out"
-            style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);"
+            style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1)"
             :style="verticalLineStyle"
           />
         </div>
@@ -152,10 +142,8 @@ const isOpen = ref(false);
       </div>
 
       <div
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { delay: 300 } }"
-        class="mt-20 text-center md:mt-24"
+        v-scroll-animate:300ms
+        class="mt-20 text-center md:mt-24 fade-slide-up"
       >
         <UButton
           size="xl"
@@ -163,7 +151,7 @@ const isOpen = ref(false);
           class="group px-8 cursor-pointer"
           trailing-icon="i-lucide-rocket"
           :ui="{ rounded: 'rounded-full' }"
-          @click="isOpen = true;"
+          @click="isOpen = true"
         >
           Book a Call
         </UButton>
@@ -174,5 +162,5 @@ const isOpen = ref(false);
     </div>
   </UPageSection>
 
-      <Calendly v-model:open="isOpen"/>
+  <Calendly v-model:open="isOpen" />
 </template>

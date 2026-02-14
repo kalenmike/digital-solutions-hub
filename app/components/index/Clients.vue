@@ -1,5 +1,8 @@
 <template>
-  <h2 class="text-2xl font-semibold text-center mb-20">
+  <h2
+    v-scroll-animate
+    class="fade-slide-up text-2xl font-semibold text-center mb-20"
+  >
     Trusted by <span class="text-primary">top brands</span> across industries
   </h2>
   <UMarquee pause-on-hover>

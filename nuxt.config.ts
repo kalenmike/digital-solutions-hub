@@ -54,6 +54,17 @@ export default defineNuxtConfig({
           src: "https://assets.calendly.com/assets/external/widget.js",
           async: true,
         },
+        {
+          // Custom script to add `js` class to <html>
+          hid: "js-class-script", // Unique identifier
+          innerHTML: `
+          if (typeof document !== 'undefined') {
+            document.documentElement.classList.add('js');
+          }
+        `,
+          type: "text/javascript",
+          ssr: false, // This ensures that the script only runs client-side
+        },
       ],
     },
   },

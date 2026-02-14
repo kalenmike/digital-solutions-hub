@@ -4,13 +4,7 @@
     class="md:px-16 bg-[var(--ui-bg)] shadow-[0_0_10px_0_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_0_rgba(250,250,250,0.05)]"
   >
     <template #title>
-      <span
-        v-motion
-        :initial="{ opacity: 0, x: -20 }"
-        :visible-once="{ opacity: 1, x: 0, transition: { duration: 600 } }"
-      >
-        About me
-      </span>
+      <div v-scroll-animate class="fade-slide-up">About me</div>
     </template>
     <UContainer>
       <p

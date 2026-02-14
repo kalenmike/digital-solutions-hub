@@ -33,45 +33,22 @@ const services = [
 ];
 </script>
 <template>
-  <UPageSection
-    id="services"
-  >
+  <UPageSection id="services">
     <template #title>
-      <span
-        v-motion
-        :initial="{ opacity: 0, x: -20 }"
-        :visible-once="{ opacity: 1, x: 0, transition: { duration: 600 } }"
-      >
-        Services
-      </span>
+      <div v-scroll-animate class="fade-slide-up">Services</div>
     </template>
     <template #description>
-      <span
-        v-motion
-        :initial="{ opacity: 0, x: -20 }"
-        :visible-once="{ opacity: 1, x: 0, transition: { duration: 600 } }"
-      >
+      <div v-scroll-animate class="fade-slide-up">
         Comprehensive digital solutions tailored to your needs, from strategic
         planning to hands-on technical implementation.
-      </span>
+      </div>
     </template>
     <template #features>
       <div
         v-for="(item, index) in services"
         :key="item.title"
-        v-motion
-        :initial="{ opacity: 0, y: 40 }"
-        :visible-once="{
-          opacity: 1,
-          y: 0,
-          transition: {
-            delay: index * 150,
-            type: 'spring',
-            stiffness: 50,
-          },
-        }"
-        :hovered="{ y: -8, transition: { type: 'spring', stiffness: 300 } }"
-        class="cursor-default"
+        v-scroll-animate="`${index * 100}ms`"
+        class="cursor-default fade-slide-up"
       >
         <UPageFeature v-bind="item" />
       </div>
