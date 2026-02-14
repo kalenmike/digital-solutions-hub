@@ -156,8 +156,6 @@ const showGrain = false;
           class="hidden lg:flex"
         />
 
-        <UColorModeButton />
-
         <UButton
           to="https://github.com/kalenmike"
           target="_blank"
@@ -264,11 +262,16 @@ const showGrain = false;
         </UContainer>
       </template>
       <template #default>
-        <p class="text-sm text-muted text-center">
-          Made by humans, not robots 🤖
-          <br />
-          © 2006 - {{ new Date().getFullYear() }}
-        </p>
+        <div class="flex flex-col items-center">
+          <div class="mb-5">
+            <UColorModeSelect />
+          </div>
+          <p class="text-sm text-muted text-center">
+            Made by humans, not robots 🤖
+            <br />
+            © 2006 - {{ new Date().getFullYear() }}
+          </p>
+        </div>
       </template>
     </UFooter>
   </UApp>
