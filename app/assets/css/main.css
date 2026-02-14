@@ -3,6 +3,8 @@
 
 @plugin "@tailwindcss/typography";
 
+@import "./animations.css";
+
 @layer utilities {
   .show-light {
     @apply block dark:hidden;
@@ -72,10 +74,6 @@
 
 .animate-noise {
   animation: noise-jitter 0.1s infinite steps(1);
-}
-
-[v-motion] {
-  opacity: 0;
 }
 
 .prose a {
