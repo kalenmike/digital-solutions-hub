@@ -155,15 +155,6 @@ const showGrain = false;
           :items="navItems"
           class="hidden lg:flex"
         />
-
-        <UButton
-          to="https://github.com/kalenmike"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
       </template>
       <template #body>
         <UNavigationMenu
