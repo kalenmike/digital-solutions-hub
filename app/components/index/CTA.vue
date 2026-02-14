@@ -1,16 +1,5 @@
 <script setup lang="ts">
-const bookMe = () => {
-  // Check if the script has loaded to prevent errors
-  if ((window as any).Calendly) {
-    (window as any).Calendly.initPopupWidget({
-      url: "https://calendly.com/meet-kalen-michael/intro-call",
-    });
-  } else {
-    console.error("Calendly script hasn't loaded yet.");
-  }
-};
-
-const isOpen = ref(false);
+const isCalendlyOpen = useState("calendly-modal", () => false);
 </script>
 <template>
   <UPageSection>
@@ -65,7 +54,7 @@ const isOpen = ref(false);
             size="lg"
             color="primary"
             class="cursor-pointer"
-            @click="isOpen = true"
+            @click="isCalendlyOpen = true"
           />
           <p class="mt-2 text-sm text-gray-500">
             Free 15 minute call - no commitment
@@ -74,6 +63,4 @@ const isOpen = ref(false);
       </template>
     </UPageCTA>
   </UPageSection>
-
-  <Calendly v-model:open="isOpen" />
 </template>

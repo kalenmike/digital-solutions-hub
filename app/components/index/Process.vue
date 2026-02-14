@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useScroll } from "@vueuse/core";
 
+const isCalendlyOpen = useState("calendly-modal", () => false);
+
 const steps = [
   {
     number: 1,
@@ -68,8 +70,6 @@ const verticalLineStyle = computed(() => {
     willChange: "transform", // Hints to the browser for smoother animation
   };
 });
-
-const isOpen = ref(false);
 </script>
 <template>
   <!-- <UPageSection -->
@@ -151,7 +151,7 @@ const isOpen = ref(false);
           class="group px-8 cursor-pointer"
           trailing-icon="i-lucide-rocket"
           :ui="{ rounded: 'rounded-full' }"
-          @click="isOpen = true"
+          @click="isCalendlyOpen = true"
         >
           Book a Call
         </UButton>
@@ -161,6 +161,4 @@ const isOpen = ref(false);
       </div>
     </div>
   </UPageSection>
-
-  <Calendly v-model:open="isOpen" />
 </template>

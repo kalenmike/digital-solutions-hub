@@ -2,7 +2,11 @@
 import type { FooterColumn } from "@nuxt/ui";
 const route = useRoute();
 const config = useRuntimeConfig();
-const base = "https://kalenmichael.com";
+
+// State to manage the Calendly Modal
+// Use: const isCalendlyOpen = useState('calendly-modal')
+//      @click="isCalendlyOpen = true"
+const isCalendlyOpen = useState("calendly-modal", () => false);
 
 // This computed property updates whenever the route changes
 const canonicalUrl = computed(() => {
@@ -11,7 +15,7 @@ const canonicalUrl = computed(() => {
   //   return `${base}`;
   // }
   // For all other routes, ensure a trailing slash
-  return `${base}${route.path.endsWith("/") ? route.path : `${route.path}/`}`;
+  return `${config.public.siteUrl}${route.path.endsWith("/") ? route.path : `${route.path}/`}`;
 });
 
 useHead({
@@ -126,6 +130,7 @@ const showGrain = false;
 
 <template>
   <UApp>
+    <Calendly v-model:open="isCalendlyOpen" />
     <BackToTop />
 
     <div v-if="showGrain" class="fixed min-h-screen">
@@ -151,6 +156,9 @@ const showGrain = false;
         variant="link"
         :items="navItems"
         class="hidden lg:flex"
+        :ui="{
+          link: 'text-muted hover:text-white transition-colors',
+        }"
       />
 
       <template #right>
@@ -160,7 +168,7 @@ const showGrain = false;
           size="lg"
           color="primary"
           class="cursor-pointer"
-          @click="console.log('Book a call clicked')"
+          @click="isCalendlyOpen = true"
         />
       </template>
       <template #body>
@@ -205,7 +213,6 @@ const showGrain = false;
                 :ui="{
                   label: 'mb-3 text-sm',
                   list: 'space-y-1 mt-0',
-                  base: 'py-0',
                 }"
               />
             </div>
