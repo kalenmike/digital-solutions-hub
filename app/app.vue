@@ -87,39 +87,37 @@ onMounted(() => {
 
 const navItems = [
   {
-    label: "About",
-    to: "/#about",
-  },
-  {
     label: "Services",
     to: "/#services",
   },
   {
-    label: "How I Help",
-    to: "/#support",
+    label: "Process",
+    to: "/#process",
   },
-  {
-    label: "For Developers",
-    to: "/#developers",
-  },
-  {
-    label: "Contact",
-    to: "/#contact",
-  },
-  {
-    label: "Tools",
-    to: "/external-tools",
-  },
-  {
-    label: "Blog",
-    to: "/blog",
-  },
+  // {
+  //   label: "Work",
+  //   to: "/#work",
+  // },
 ];
 
-const columns: FooterColumn[] = [
+const footerNav: FooterColumn[] = [
   {
     label: "Quick Links",
-    children: [...navItems],
+    children: [
+      ...navItems,
+      {
+        label: "Helpful Tools",
+        to: "/external-tools",
+      },
+      {
+        label: "Blog",
+        to: "/blog",
+      },
+      {
+        label: "Contact",
+        to: "/#contact",
+      },
+    ],
   },
 ];
 
@@ -148,12 +146,21 @@ const showGrain = false;
         </NuxtLink>
       </template>
 
+      <UNavigationMenu
+        color="neutral"
+        variant="link"
+        :items="navItems"
+        class="hidden lg:flex"
+      />
+
       <template #right>
-        <UNavigationMenu
-          color="neutral"
-          variant="link"
-          :items="navItems"
-          class="hidden lg:flex"
+        <UButton
+          label="Book a Call"
+          trailing-icon="i-lucide-rocket"
+          size="lg"
+          color="primary"
+          class="cursor-pointer"
+          @click="console.log('Book a call clicked')"
         />
       </template>
       <template #body>
@@ -194,33 +201,7 @@ const showGrain = false;
 
             <div class="flex-1">
               <UFooterColumns
-                :columns="[
-                  {
-                    label: 'Quick Links',
-                    children: [
-                      {
-                        label: 'About',
-                        to: '#about',
-                      },
-                      {
-                        label: 'Services',
-                        to: '#services',
-                      },
-                      {
-                        label: 'How I Help',
-                        to: '#support',
-                      },
-                      {
-                        label: 'For Developers',
-                        to: '#developers',
-                      },
-                      {
-                        label: 'Contact',
-                        to: '#contact',
-                      },
-                    ],
-                  },
-                ]"
+                :columns="footerNav"
                 :ui="{
                   label: 'mb-3 text-sm',
                   list: 'space-y-1 mt-0',
