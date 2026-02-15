@@ -159,7 +159,7 @@ const showGrain = false;
         :items="navItems"
         class="hidden lg:flex"
         :ui="{
-          link: 'text-muted hover:text-white transition-colors',
+          link: 'text-muted hover:text-default transition-colors',
         }"
       />
 
