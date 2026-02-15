@@ -74,8 +74,8 @@ useSeoMeta({
   twitterDescription: description,
 });
 
-onMounted(() => {
-  const contactUrl = `${window.location.origin}/#contact`;
+const showConsoleMarketting = () => {
+  const contactUrl = `${window.location.origin}/contact`;
   console.log(
     "%c 👋 Hello there! %c Looking for a developer? %c \n\nMessage me from this site: %c" +
       contactUrl +
@@ -87,7 +87,9 @@ onMounted(() => {
     "color: #64748b; font-style: italic;", // Email text
     "color: #3b82f6; font-weight: bold;", // Email address
   );
-});
+};
+
+onMounted(() => showConsoleMarketting());
 
 const navItems = [
   {
