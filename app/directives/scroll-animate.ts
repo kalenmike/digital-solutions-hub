@@ -8,7 +8,6 @@ const scrollAnimate: ObjectDirective = {
       el.classList.add("animate");
     };
 
-
     let delay = "";
 
     // Check if an argument (e.g., `v-scroll-animate:400ms`) is passed
@@ -17,7 +16,6 @@ const scrollAnimate: ObjectDirective = {
     }
     // Otherwise, check if the directive has a dynamic value (e.g., `v-scroll-animate="delay"`)
     else if (binding.value) {
-      console.log(binding.value);
       delay = binding.value;
     }
 
