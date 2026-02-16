@@ -106,6 +106,22 @@ const navItems = [
   // },
 ];
 
+const mobileNavItems = [
+  ...navItems,
+  {
+    label: "Helpful Tools",
+    to: "/external-tools",
+  },
+  {
+    label: "Blog",
+    to: "/blog",
+  },
+  {
+    label: "Contact",
+    to: "/#contact",
+  },
+];
+
 const footerNav: FooterColumn[] = [
   {
     label: "Quick Links",
@@ -146,7 +162,7 @@ const showGrain = false;
       </div>
     </div>
 
-    <UHeader>
+    <UHeader :ui="{ body: 'h-full' }">
       <template #left>
         <NuxtLink to="/">
           <AppLogo />
@@ -173,17 +189,73 @@ const showGrain = false;
           @click="isCalendlyOpen = true"
         />
       </template>
+
+      <!-- Mobile Navigation Menu -->
       <template #body>
-        <UNavigationMenu
-          color="neutral"
-          variant="link"
-          :items="navItems"
-          orientation="vertical"
-          :ui="{
-            link: 'text-xl justify-center py-4',
-            item: 'w-full text-center',
-          }"
-        />
+        <div class="flex flex-col justify-between h-full">
+          <UNavigationMenu
+            color="neutral"
+            variant="link"
+            :items="mobileNavItems"
+            orientation="vertical"
+            :ui="{
+              link: 'text-xl justify-center py-4',
+              item: 'w-full text-center',
+            }"
+          />
+          <div class="flex flex-col items-center justify-center">
+            <div class="mb-5">
+              <p class="text-lg font-bold text-center">Kalen Michael</p>
+              <p
+                class="mt-2 text-m text-gray-500 dark:text-gray-400 tracking-wide text-center"
+              >
+                Digital Solutions Consultant helping businesses and individuals
+                bring their digital ideas to life.
+              </p>
+            </div>
+
+            <p class="font-semibold mb-3 text-sm">Connect</p>
+            <div>
+              <UButton
+                to="https://github.com/kalenmike"
+                target="_blank"
+                icon="i-simple-icons-github"
+                aria-label="GitHub"
+                color="neutral"
+                variant="ghost"
+                size="xl"
+              />
+              <UButton
+                to="https://www.linkedin.com/in/kalenmichael/"
+                target="_blank"
+                icon="i-simple-icons-linkedin"
+                aria-label="LinkedIn"
+                color="neutral"
+                variant="ghost"
+                size="xl"
+              />
+              <UButton
+                to="/contact"
+                target="_blank"
+                icon="i-lucide-message-circle"
+                aria-label="Message Me"
+                color="neutral"
+                variant="ghost"
+                size="xl"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="mb-5">
+              <UColorModeSelect />
+            </div>
+            <p class="text-sm text-muted text-center">
+              Made by humans, not robots 🤖
+              <br />
+              © 2006 - {{ new Date().getFullYear() }}
+            </p>
+          </div>
+        </div>
       </template>
     </UHeader>
 
@@ -233,7 +305,7 @@ const showGrain = false;
                 to="https://www.linkedin.com/in/kalenmichael/"
                 target="_blank"
                 icon="i-simple-icons-linkedin"
-                aria-label="GitHub"
+                aria-label="LinkedIn"
                 color="neutral"
                 variant="ghost"
                 size="xl"
@@ -242,7 +314,7 @@ const showGrain = false;
           </div>
         </UContainer>
       </template>
-      <template #default>
+      <template #default class="h-full">
         <div class="flex flex-col items-center">
           <div class="mb-5">
             <UColorModeSelect />
