@@ -2,6 +2,7 @@
   <div>
     <IndexLanding />
     <LazyIndexProcess />
+    <LazyIndexWork />
     <LazyIndexAbout />
     <LazyIndexServices />
     <LazyIndexClients />

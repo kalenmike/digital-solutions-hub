@@ -100,10 +100,10 @@ const navItems = [
     label: "Process",
     to: "/#process",
   },
-  // {
-  //   label: "Work",
-  //   to: "/#work",
-  // },
+  {
+    label: "Work",
+    to: "/#work",
+  },
 ];
 
 const mobileNavItems = [
