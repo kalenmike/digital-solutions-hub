@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useScroll } from "@vueuse/core";
-
 const isCalendlyOpen = useState("calendly-modal", () => false);
 
 const steps = [
@@ -34,30 +32,60 @@ const steps = [
   },
 ];
 
-// Scroll Progress Logic using VueUse (Better for Nuxt/Vue)
-// const sectionRef = ref<HTMLElement | null>(null);
-// const { y } = useWindowScroll()
+const stepActive = ref([false, false, false, false]);
+
+const updateSteps = (progress: number) => {
+  const activationPoints: number[] = [0.01, 0.25, 0.6, 0.95];
+
+  for (let i = 0; i < activationPoints.length; i++) {
+    const point = activationPoints[i];
+    if (point === undefined) continue; // Typescript error check
+
+    if (progress >= point) {
+      stepActive.value[i] = true;
+    } else {
+      stepActive.value[i] = false;
+    }
+  }
+};
 
 const sectionRef = ref(null);
 // We track the window scroll, but calculate based on the section
-const { y } = useScroll(window);
 const { top, height } = useElementBounding(sectionRef);
 
 const scrollPercent = computed(() => {
   if (!sectionRef.value) return 0;
 
-  // Calculation: How far has the section moved past the top of the screen?
-  // We divide the distance scrolled by the total height (minus viewport)
   const windowHeight = window.innerHeight;
-  const progress = -top.value / (height.value - windowHeight);
 
-  // Clamp between 0 and 1
-  return Math.max(0, Math.min(1, progress));
+  // Section fully below the viewport → 0
+  if (top.value >= windowHeight) return 0;
+
+  // Section fully above the viewport → 1
+  if (top.value + height.value <= 0) return 1;
+
+  // Define your buffer percentages (0.0 → 1.0)
+  const bufferStart = 0.6; // 10% into the viewport
+  const bufferEnd = 0.0; // 10% before leaving viewport
+
+  // Calculate the start/end trigger points in pixels
+  const startTrigger = windowHeight * (1 - bufferStart); // top of viewport + bufferStart
+  const endTrigger = -height.value * bufferEnd; // bottom of section - bufferEnd
+
+  // Raw scroll distance between start and end
+  const totalDistance = startTrigger - endTrigger;
+  const distanceScrolled = startTrigger - top.value;
+
+  // Normalize to 0 → 1
+  let pos = distanceScrolled / totalDistance;
+  pos = Math.max(0, Math.min(1, pos)); // clamp
+  updateSteps(pos);
+  return pos;
 });
 
 const lineStyle = computed(() => {
   return {
-    transform: `scaleX(${1 - scrollPercent.value})`,
+    transform: `scaleX(${scrollPercent.value})`,
     transformOrigin: "left", // Ensures it grows from the left
     willChange: "transform", // Hints to the browser for smoother animation
   };
@@ -136,6 +164,7 @@ const verticalLineStyle = computed(() => {
             v-for="(step, index) in steps"
             :key="step.number"
             :step="step"
+            :active="stepActive[index]"
             :index="index"
           />
         </div>
