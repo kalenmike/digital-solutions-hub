@@ -10,7 +10,7 @@ const isCalendlyOpen = useState("calendly-modal");
         'w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col flex flex-col lg:grid gap-8 sm:gap-y-16 py-12 sm:py-24 lg:py-40',
       footer: 'mt-2 md:mt-4 lg:mt-10',
     }"
-    class="min-h-[calc(100dvh-64px)] h-auto lg:h-[calc(100dvh-64px)] flex flex-col justify-center"
+    class="min-h-[calc(100svh-64px)] h-auto lg:min-h-[calc(100svh-64px)] flex flex-col justify-center"
   >
     <template #top>
       <BackgroundGrid />
