@@ -1,0 +1,1 @@
+import i from"./VAuaLdJM.js";import{d as n,o as m,b as o}from"./DkV7QedN.js";import"./DUu5jbam.js";const r=n({__name:"Timeline",props:{items:{type:Array,required:!0}},setup(e){return(s,a)=>{const t=i;return m(),o(t,{color:"primary",size:"3xl","default-value":1,items:e.items,class:"w-96"},null,8,["items"])}}}),_=Object.assign(r,{__name:"Timeline"});export{_ as default};

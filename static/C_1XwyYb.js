@@ -1,1 +1,0 @@
-import{N as l,c as n,J as r,I as p,B as u,o as d,O as s}from"./DeQrqHUX.js";const i={base:""},_={__name:"ProseTbody",props:{class:{type:null,required:!1}},setup(e){const o=e,a=l(),t=u(()=>s({extend:s(i),...a.ui?.prose?.tbody||{}}));return(c,m)=>(d(),n("tbody",{class:p(t.value({class:o.class}))},[r(c.$slots,"default")],2))}};export{_ as default};

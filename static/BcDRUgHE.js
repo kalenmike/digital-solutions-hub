@@ -1,0 +1,1 @@
+import t from"./B6xYnjzC.js";import{_ as c,b as n,o as e}from"./DkV7QedN.js";import"./Bo_ai_83.js";import"./CktYLpB3.js";const r={};function _(a,s){const o=t;return e(),n(o)}const x=c(r,[["render",_]]);export{x as default};
